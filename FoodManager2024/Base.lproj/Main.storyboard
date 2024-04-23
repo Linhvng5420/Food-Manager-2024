@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Meal Detail Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MealDetailController" customModule="FoodManager2024" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m6s-4E-hcp">
+                                <rect key="frame" x="20" y="79" width="353" height="40"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default" translatesAutoresizingMaskIntoConstraints="NO" id="F0A-hd-KQt">
+                                <rect key="frame" x="20" y="139" width="353" height="353"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="F0A-hd-KQt" secondAttribute="height" multiplier="1:1" id="4ID-mS-VLc"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="NvI-ut-j7E" appends="YES" id="OuE-hX-BDh"/>
+                                </connections>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="OBD-GM-CWv" customClass="UIRating" customModule="FoodManager2024">
+                                <rect key="frame" x="51.666666666666657" y="526" width="290" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="9V7-Q0-oc8"/>
+                                    <constraint firstAttribute="width" constant="290" id="zpm-th-idx"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OBD-GM-CWv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="72Q-bW-OVs"/>
+                            <constraint firstItem="OBD-GM-CWv" firstAttribute="top" secondItem="F0A-hd-KQt" secondAttribute="bottom" constant="34" id="C5U-Ct-a2b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="F0A-hd-KQt" secondAttribute="trailing" constant="20" id="G4m-FU-9wL"/>
+                            <constraint firstItem="m6s-4E-hcp" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Rfk-U5-QHL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m6s-4E-hcp" secondAttribute="trailing" constant="20" id="eO2-ri-vkb"/>
+                            <constraint firstItem="F0A-hd-KQt" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="exk-iF-Fge"/>
+                            <constraint firstItem="F0A-hd-KQt" firstAttribute="top" secondItem="m6s-4E-hcp" secondAttribute="bottom" constant="20" id="fUR-03-OFp"/>
+                            <constraint firstItem="m6s-4E-hcp" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="fju-sr-ugd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mealImage" destination="F0A-hd-KQt" id="EkI-LX-xQI"/>
+                        <outlet property="mealName" destination="m6s-4E-hcp" id="VGh-jS-3Au"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="NvI-ut-j7E">
+                    <connections>
+                        <action selector="imagePicker:" destination="BYZ-38-t0r" id="BCn-TS-ZBF"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-1196.1832061068701" y="26.760563380281692"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="default" width="166.66667175292969" height="104.33333587646484"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
